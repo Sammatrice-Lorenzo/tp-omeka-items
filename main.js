@@ -2,7 +2,7 @@ async function getData() {
     try {
         const response = await fetch('http://127.0.0.1:8000/omeka/api/items')
         if (!response.ok) {
-            throw new Error('La réponse n\'a pas pu êtr')
+            throw new Error('La réponse n\'a pas pu être retourné')
         }
 
         return response.json()

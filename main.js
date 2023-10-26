@@ -2,12 +2,12 @@ async function getData() {
     try {
         const response = await fetch('http://127.0.0.1:8000/omeka/api/items')
         if (!response.ok) {
-            throw new Error('Network response was not ok')
+            throw new Error('La réponse n\'a pas pu êtr')
         }
 
         return response.json()
     } catch (error) {
-        console.error('An error occurred:', error)
+        console.error('Un problème serveur est survenu :', error)
         return null
     }
 }
@@ -51,7 +51,7 @@ async function createHtmlContentCards(items) {
             .select('.card-body')
             .append('p')
             .attr('class', 'class="font-monospace"')
-            .text((item) => 'Réalstateur:' + ' ' + item['dcterms:creator'][0]['@value'])
+            .text((item) => 'Réalisateur:' + ' ' + item['dcterms:creator'][0]['@value'])
       })
 }
 

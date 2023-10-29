@@ -52,6 +52,12 @@ async function createHtmlContentCards(items) {
             .append('p')
             .attr('class', 'class="font-monospace"')
             .text((item) => 'Réalisateur:' + ' ' + item['dcterms:creator'][0]['@value'])
+
+        d3.select(this)
+            .select('.card-body')
+            .append('p')
+            .attr('class', 'class="font-monospace"')
+            .text((item) => item['dcterms:type'][0]['@value'])
       })
 }
 
